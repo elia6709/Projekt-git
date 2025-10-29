@@ -1,4 +1,5 @@
 import random
+import sys
 HANGMANPICS = ['''
 
   +---+
@@ -63,9 +64,16 @@ HANGMANPICS = ['''
 #Erstelle eine Liste aus Worten in der Form ['informatik', 'hardware', 'switch'] usw.
 #Da diese Eingabe als Liste sehr muehsam ist, kannst du auch einen String eingeben un diesen splitten. "wort wort".split()
 
-words = ['NETZKARTE', 'ETHERNET', 'ALGORITHMUS', 'BETRIEBSSYSTEM', 'NETZWERK', 'DATENBANK', 'SPEICHER', 'LAPTOP', 'LINUX']
 
 
+
+words_tiere = ["APFEL", "HAUS", "BAUM", "TISCH", "STUHL", "FENSTER", "TÜR", "LAMPE", "SOFA", "TEPPICH", "SCHRANK", "REGAL", "BUCH", "HEFT", "STIFT", "PAPIER", "UHR", "HANDY", "COMPUTER", "MAUS", "TASTATUR", "BILDSCHIRM", "FERNSEHER", "RADIO", "KAMERA", "FOTO", "BILD", "SPIEGEL", "VASE", "BLUME", "PFLANZE", "TOPF", "HERD", "OFEN", "KÜHLSCHRANK", "MIKROWELLE", "WASSERKOCHER", "TASSE", "GLAS", "TELLER", "MESSER", "GABEL", "LÖFFEL", "SCHÜSSEL", "TOPFDECKEL", "SEIFE", "ZAHNBÜRSTE", "ZAHNPASTA", "HANDTUCH", "SHAMPOO", "DUSCHGEL", "KAMM", "BÜRSTE", "FÖHN", "RASIERER", "CREME", "MANTEL", "JACKE", "HOSE", "HEMD", "T-SHIRT", "PULLOVER", "KLEID", "ROCK", "SCHUHE", "SOCKEN", "MÜTZE", "SCHAL", "HANDSCHUHE", "BRILLE", "RUCKSACK", "TASCHE", "GELDBEUTEL", "SCHLÜSSEL", "AUTO", "FAHRRAD", "ROLLER", "BUS", "ZUG", "BAHN", "FLUGZEUG", "SCHIFF", "BOOT", "STRASSE", "WEG", "BRÜCKE", "TUNNEL", "AMPEL", "SCHILD", "KREUZUNG", "PARKPLATZ", "GARAGE", "TANKSTELLE", "SCHULE", "UNIVERSITÄT", "LEHRER", "SCHÜLER", "KLASSE", "TAFEL", "KREIDE", "LINEAL", "ZIRKEL", "ATLAS", "GLOBUS", "SPORT", "BALL", "TOR", "NETZ", "SCHLÄGER", "TRIKOT", "RENNEN", "SCHWIMMEN", "SPRINGEN", "TURNEN", "MUSIK", "LIED", "TON", "KLANG", "RHYTHMUS", "MELODIE", "GITARRE", "KLAVIER", "GEIGE", "TROMMEL", "FLÖTE", "SAXOPHON", "MIKROFON", "KONZERT", "BÜHNE", "THEATER", "FILM", "KINO", "SCHAUSPIELER", "REGISSEUR", "SZENE", "DREHBUCH", "LICHT", "PUBLIKUM", "APPLAUS", "ZEITUNG", "ARTIKEL", "BERICHT", "SCHLAGZEILE", "REDAKTION", "JOURNALIST", "INTERVIEW", "MEINUNG", "KOMMENTAR", "POLITIK", "REGIERUNG", "MINISTER", "PRÄSIDENT", "PARTEI", "WAHL", "GESETZ", "POLIZEI", "FEUERWEHR", "ARZT", "KRANKENHAUS", "PATIENT", "MEDIKAMENT", "REZEPT", "SPRITZE", "VERBAND", "OPERATION", "THERAPIE", "GESUNDHEIT", "KRANKHEIT", "FIEBER", "HUSTEN", "SCHMERZ", "BLUT", "HERZ", "LUNGE", "MAGEN", "KOPF", "BEIN", "ARM", "HAND", "FUSS", "FINGER", "ZEH", "HAUT", "AUGE", "OHR", "NASE", "MUND", "ZAHN", "STIMME", "SPRACHE", "WORT", "SATZ", "TEXT", "BUCHSTABE", "GRAMMATIK", "BEDEUTUNG", "FRAGE", "ANTWORT"]
+
+words_informatik
+
+words_Länder
+
+words_körperteile
 
 #Waehle ein zufaelliges Wort aus der Liste wordList und gib dieses mit return zurück
 def getRandomWord(words):
@@ -119,11 +127,12 @@ def playAgain():
 #Hier beginnt das Programm
 #Gib einen schoenen Titel aus, damit der Benutzer weiss, worum es geht
 print("""
-H   H   A   N   N  GGGG  M   M   A   N   N
-H   H  A A  NN  N G      MM MM  A A  NN  N
-HHHHH AAAAA N N N G  GG  M M M AAAAA N N N
-H   H A   A N  NN G   G  M   M A   A N  NN
-H   H A   A N   N  GGGG  M   M A   A N   N
+██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗
+██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║
+███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║
+██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
 """)
 #hier kommt dein Code
@@ -147,6 +156,15 @@ while True:
                 foundAllLetters = False
                 break
         if foundAllLetters:
+            print("""                                                    
+   __      __   __  __  __    ___     ___     ___      __    ___    
+ /'_ `\  /'__`\/\ \/\ \/\ \  / __`\ /' _ `\ /' _ `\  /'__`\/' _ `\  
+/\ \L\ \/\  __/\ \ \_/ \_/ \/\ \L\ \/\ \/\ \/\ \/\ \/\  __//\ \/\ \ 
+\ \____ \ \____\\ \___x___/'\ \____/\ \_\ \_\ \_\ \_\ \____\ \_\ \_\
+ \/___L\ \/____/ \/__//__/   \/___/  \/_/\/_/\/_/\/_/\/____/\/_/\/_/
+   /\____/                                                          
+   \_/__/                                                           
+""")
             print('Yep! Das gesuchte Wort ist "' + secretWord + '"! Du hast gewonnen!')
             gameIsDone = True
     else:
@@ -154,10 +172,19 @@ while True:
 
         if len(missedLetters) == len(HANGMANPICS) - 1:
             displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
+            print('''
+ __  __                 ___                                  
+/\ \/\ \               /\_ \                                 
+\ \ \ \ \     __   _ __\//\ \     ___   _ __    __    ___    
+ \ \ \ \ \  /'__`\/\`'__\\ \ \   / __`\/\`'__\/'__`\/' _ `\  
+  \ \ \_/ \/\  __/\ \ \/  \_\ \_/\ \L\ \ \ \//\  __//\ \/\ \ 
+   \ `\___/\ \____\\ \_\  /\____\ \____/\ \_\\ \____\ \_\ \_\
+    `\/__/  \/____/ \/_/  \/____/\/___/  \/_/ \/____/\/_/\/_/                                                   
+''')
             print('Du hast alle Versuche verbraucht\nNach ' + str(len(missedLetters)) + ' falschen Versuchen und ' + str(len(correctLetters)) + ' korrekten Versuchen, wäre das Wort "' + secretWord + '" gewesen')
             gameIsDone = True
 
-    if gameIsDone:
+    while gameIsDone:
         missedLetters = ''
         correctLetters = ''
         secretWord = getRandomWord(words)
@@ -169,10 +196,8 @@ while True:
 
         elif jaodernein == '2':
             print('Danke fürs Spielen')
-            break
-
-        else:
-            print('1 oder 2!')
+            sys.exit()
+            
 
 
         #Falls der Spieler nochmals spielen will, muessen alle Variablen (missedLetters, correctLetters) wieder geleert werden und gameIsDone auf False gesetz werden
